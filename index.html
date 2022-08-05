@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <!-- https://ant.design/  퍼블리싱 참고-->
+</head>
+<body>
+    <div>
+        <section id="wrap">
+            <header><span id="darkMode" class="whiteFont">DARK</span></header>
+            <div id="smallCircle" class="whiteBackground"></div>
+            <div class="fontsize15rem whiteFont bold subject">Hi,</div>
+            <div class="fontsize10rem whiteFont bold subject line80">
+                IM SO </br>
+                YOUNG
+            </div>
+            <div id="bigCircle" class="whiteBackground" data-id="sy"></div>
+        </section>
+        <section>
+            <div class="whiteFont fontsize5rem whiteboxWidth centerTextBox10">SOYOUNG'S PORTFOLIO</div>
+            <div class="bold centerTextBox10 fontsize5rem whiteBackground" id="aboutme">ABOUT ME</div>
+            <div class="fontsize5rem whiteFont bold subject">SKILLS</div>
+            <div class="flexAlignStart">
+                <div class="whiteBoxWidth whiteBox17rem"></div>
+                <div>
+                    <div class="whiteBoxWidth whiteBox7rem"></div>
+                    <div class="whiteBoxWidth whiteBox13rem"></div>
+                </div>
+                <div class="whiteBoxWidth whiteBox17rem"></div>
+                <div class="whiteBoxWidth whiteBox20rem"></div>
+            </div>
+        </section>
+        <section class="flexCenter">
+            <div id="projectBox" class="whiteBackgroun flexCenter">PROJECT 01</div>
+        </section>
+        <section>
+            <div class="whiteFont fontsize5rem bold subject contact">
+                ContactMe
+            </div>
+            <div class="footer whiteBackground"></div>
+        </section>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        console.log(document.getElementById("bigCircle").getAttribute("data-id"));//가져옴
+        console.log(document.getElementById("bigCircle").getAttribute("class"));
+
+        //최상위 root에 이 속성을 세팅해 준 것임
+        document.documentElement.setAttribute("color-theme","puple");
+    };
+
+    let darkMode = document.getElementById("darkMode");
+    darkMode.addEventListener("click", (e)=>{
+        //e ==> 이벤트가 일어난 객체
+        //e.target => 이벤트가 일어난 객체를 선택
+        //e.target.innerText => 일어난 개체를 선택해서 innerText 속성을 선택
+        if(e.target.innerText === "DARK"){
+            document.documentElement.setAttribute("color-theme","dark");//설정
+            e.target.innerText = "PUPLE";
+        }else{
+            document.documentElement.setAttribute("color-theme","puple");
+            e.target.innerText = "DARK";
+        }
+    });
+</script>
+</html>
